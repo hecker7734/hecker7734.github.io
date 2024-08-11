@@ -22,7 +22,33 @@
     </style>
 </head>
 <body>
-    <h1>Ping</h1>
-    <p>Service is active!</p>
-</body>
+    <h1>Pinguh</h1>
+        <script>
+        // Function to send a POST request
+        function sendPostRequest() {
+            fetch('https://replit.com/@heckerhecker4/emojiCounterDiscordBot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    key: 'value' // Replace with the actual data you want to send
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response:', data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        // Send a POST request every 3 minutes (180,000 milliseconds)
+        setInterval(sendPostRequest, 3000 * 60000 ); // 1 second times 60 seconds (minute based)
+
+        // Optionally, you can also send the first request immediately
+        sendPostRequest();
+    </script>
+</body>    
 </html>
